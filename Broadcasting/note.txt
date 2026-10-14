@@ -1,0 +1,17 @@
+how numpy handle array of different shape
+
+-> matching dimension
+[1,2,3]+[4,5,6]
+ans = [5,7,9]
+
+-> expending single element
+[1,2,3]+[10]
+ans = [11,12,13]
+
+-> incompatible Shape
+[1,2,3]+[1,2]
+ans = error
+
+--> it expends smaller array to larger array
+--> faster tan loops
+--> using 1D araray to 2D array

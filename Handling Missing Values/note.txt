@@ -1,0 +1,13 @@
+why ?
+
+buitin Function
+
+1) np.isnan -> detect missing values
+2) np.nan_to_num() -> chnage values
+3) np.isinf() -> detect infinite values
+
+
+Nan stand for not a number
+
+detect misssing values 
+true for null values

@@ -1,0 +1,3 @@
+--> enitre array perform
+--> faster than boardcasting
+--> using the metrix

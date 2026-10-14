@@ -1,0 +1,260 @@
+# Indexing and Slicing in Python
+
+## 1. Indexing
+
+**Indexing** is used to access **a single element** from a sequence such as a list, tuple, or string.
+
+### Example:
+
+```python
+arr = [1, 2, 3, 4, 5]
+
+print(arr[2])
+```
+
+**Output:**
+
+```text
+3
+```
+
+Here, `arr[2]` means we are accessing the element at **index 2**.
+
+> Python indexing starts from **0**.
+
+| Element |  1 |  2 |  3 |  4 |  5 |
+| ------- | -: | -: | -: | -: | -: |
+| Index   |  0 |  1 |  2 |  3 |  4 |
+
+### Example: Find a value greater than 2 and less than 4
+
+```python
+arr = [1, 2, 3, 4, 5]
+
+# The value satisfying > 2 and < 4 is 3
+```
+
+**Answer:**
+
+```text
+3
+```
+
+However, for a NumPy array, conditions can be used directly with **Boolean masking**:
+
+```python
+import numpy as np
+
+arr = np.array([1, 2, 3, 4, 5])
+
+print(arr[(arr > 2) & (arr < 4)])
+```
+
+**Output:**
+
+```text
+[3]
+```
+
+---
+
+# 2. Slicing
+
+**Slicing** is used to access **multiple elements** from a sequence.
+
+### Syntax:
+
+```python
+array[start : stop : step]
+```
+
+* **start** → starting index
+* **stop** → ending index (**not included**)
+* **step** → how many positions to move at a time
+
+### Example:
+
+```python
+arr = [1, 2, 3, 4, 5]
+
+print(arr[1:4])
+```
+
+**Output:**
+
+```text
+[2, 3, 4]
+```
+
+Here:
+
+```text
+start = 1
+stop  = 4
+step  = 1
+```
+
+Index `4` is **not included**.
+
+---
+
+## More Slicing Examples
+
+### Example 1: Start from index 0
+
+```python
+arr = [1, 2, 3, 4, 5]
+
+print(arr[0:3])
+```
+
+Output:
+
+```text
+[1, 2, 3]
+```
+
+### Example 2: Using step
+
+```python
+arr = [1, 2, 3, 4, 5]
+
+print(arr[0:5:2])
+```
+
+Output:
+
+```text
+[1, 3, 5]
+```
+
+It takes every **2nd element**.
+
+### Example 3: Without start
+
+```python
+arr = [1, 2, 3, 4, 5]
+
+print(arr[:3])
+```
+
+Output:
+
+```text
+[1, 2, 3]
+```
+
+### Example 4: Without stop
+
+```python
+arr = [1, 2, 3, 4, 5]
+
+print(arr[2:])
+```
+
+Output:
+
+```text
+[3, 4, 5]
+```
+
+### Example 5: Reverse a list
+
+```python
+arr = [1, 2, 3, 4, 5]
+
+print(arr[::-1])
+```
+
+Output:
+
+```text
+[5, 4, 3, 2, 1]
+```
+
+---
+
+# 3. Fancy Indexing
+
+**Fancy indexing** means selecting multiple elements using a list/array of indexes.
+
+It is commonly used with **NumPy arrays**.
+
+```python
+import numpy as np
+
+arr = np.array([10, 20, 30, 40, 50])
+
+print(arr[[0, 2, 4]])
+```
+
+Output:
+
+```text
+[10 30 50]
+```
+
+Here, indexes `0`, `2`, and `4` are selected.
+
+---
+
+# 4. Boolean Masking
+
+**Boolean masking** is used to select elements based on a condition.
+
+```python
+import numpy as np
+
+arr = np.array([1, 2, 3, 4, 5])
+
+print(arr[arr > 3])
+```
+
+Output:
+
+```text
+[4 5]
+```
+
+### Multiple Conditions
+
+```python
+arr = np.array([1, 2, 3, 4, 5])
+
+print(arr[(arr > 2) & (arr < 5)])
+```
+
+Output:
+
+```text
+[3 4]
+```
+
+This means:
+
+```text
+arr > 2  → greater than 2
+arr < 5  → less than 5
+```
+
+Both conditions must be true.
+
+---
+
+# Quick Difference
+
+| Concept             | Meaning                                | Example        |
+| ------------------- | -------------------------------------- | -------------- |
+| **Indexing**        | Select a single element                | `arr[2]`       |
+| **Slicing**         | Select multiple elements in a range    | `arr[1:4]`     |
+| **Fancy Indexing**  | Select multiple elements using indexes | `arr[[0,2,4]]` |
+| **Boolean Masking** | Select elements using conditions       | `arr[arr > 3]` |
+
+### Remember
+
+```text
+Indexing       → Single element
+Slicing        → Multiple elements / range
+Fancy Indexing → Multiple elements using indexes
+Boolean Masking → Elements satisfying a condition
+```
